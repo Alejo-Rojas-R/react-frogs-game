@@ -4,13 +4,14 @@ body {
 
 .items {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 
+  height: 100%;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: auto;
 
   -webkit-user-drag: none;
@@ -26,7 +27,7 @@ body {
   -webkit-user-select: none;
   user-select: none;
 
-  animation: rotation 4s infinite ease-in-out;
+  animation: rotation 15s infinite ease-in-out;
 }
 
 .item__top--transparent {
@@ -74,7 +75,7 @@ img {
     transform: rotate(0deg);
   }
   50% {
-    transform: rotate(9deg);
+    transform: rotate(25deg);
   }
   100% {
     transform: rotate(0deg);

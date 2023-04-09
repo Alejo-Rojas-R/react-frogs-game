@@ -4,11 +4,16 @@ import { Item } from './Item'
 export const Items = () => {
     const [selectedItems, setSelectedItems] = useState([]);
 
-    const itemsNumber = Array.apply(0, Array(25));
+    const itemsNumber = Array.apply(0, Array(36));
 
     const validateSelection = () => {
+        const validateType = selectedItems.every(item => item.getAttribute('data-type') === selectedItems[0].getAttribute('data-type'));
+
+        if (validateType) {
+
+        }
+
         setSelectedItems([]);
-        
     }
 
     return (
