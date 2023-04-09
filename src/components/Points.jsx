@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Points = () => {
+export const Points = ({points}) => {
   return (
     <div className='points'>
-        0 Points
+        {points} Points
     </div>
   )
 }

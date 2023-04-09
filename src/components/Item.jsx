@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useId, useState } from 'react'
 import { Images } from '../helpers/AssetsController'
 
 /* Lilypad single item*/
@@ -26,7 +26,7 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
 
   /* Validate selection CSS class to set the setSelectedClass hook */
   const giveSelectedClass = () => {
-    setSelectedClass(selectedItems.some(item => item.id === id) && 'item--selected');
+    setSelectedClass(selectedItems.some(item => item.id === id) ? ' item--selected' : '');
   }
 
 
@@ -36,11 +36,16 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
   };
 
   const selectingItems = (e) => {
+    const selectedItem = e.target.parentNode;
     const currentItems = selectedItems;
-    currentItems.push(e.target.parentNode)
+    
+    // Validate if item has already been selected
+    if (!currentItems.includes(selectedItem)) {
+      currentItems.push(selectedItem)
 
-    setSelectedItems(currentItems);
-    giveSelectedClass();
+      setSelectedItems(currentItems);
+      giveSelectedClass();
+    }
   };
 
   const setItemType = () => {
@@ -58,7 +63,7 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
   }
 
   return (
-    <div id={id} className={'item ' + selectedClass} data-type={elementType.type}>
+    <div id={id} className={'item' + selectedClass} data-type={elementType.type} data-color={elementType.color}>
       <img className='item__top' src={elementType.image} style={rotation} />
       <img className='item__top--transparent' src={getSingleImage('empty')} onDragEnter={selectingItems} onDragEnd={validateSelection} />
       <img className='item__bottom' src={getSingleImage('lilypad')} style={rotation} />

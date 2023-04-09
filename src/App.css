@@ -22,8 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /*-webkit-user-drag: none;*/
+  
   -webkit-user-select: none;
   user-select: none;
 
@@ -50,7 +49,6 @@ body {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   user-select: none;
-  
 }
 
 .item__bottom {
@@ -58,7 +56,7 @@ body {
   -webkit-user-select: none;
   user-select: none;
 
-  transition: width 0.4s linear;
+  transition: width 0.3s linear;
 }
 
 .item--selected .item__bottom {
