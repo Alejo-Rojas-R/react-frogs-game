@@ -38,7 +38,7 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
   const selectingItems = (e) => {
     const selectedItem = e.target.parentNode;
     const currentItems = selectedItems;
-    
+
     // Validate if item has already been selected
     if (!currentItems.includes(selectedItem)) {
       currentItems.push(selectedItem)
@@ -64,9 +64,9 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
 
   return (
     <div id={id} className={'item' + selectedClass} data-type={elementType.type} data-color={elementType.color}>
-      <img className='item__top' src={elementType.image} style={rotation} />
-      <img className='item__top--transparent' src={getSingleImage('empty')} onDragEnter={selectingItems} onDragEnd={validateSelection} />
-      <img className='item__bottom' src={getSingleImage('lilypad')} style={rotation} />
+        <img className='item__top' src={elementType.image} style={rotation} />
+        <img className='item__top--transparent' src={getSingleImage('empty')} onDragEnter={selectingItems} onDragEnd={validateSelection} />
+        <img className='item__bottom' src={getSingleImage('lilypad')} style={rotation} />
     </div>
   )
 }

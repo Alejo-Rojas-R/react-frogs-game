@@ -1,5 +1,22 @@
 body {
+  height: 100%;
   background-color: #74ccf4;
+  background-image: url('src/assets/moving-water.gif');
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+}
+
+.content {}
+
+.header {
+  background-image: url('src/assets/brown-wooden-plank-clipart-md.png');
+  background-size: contain;
+  background-repeat: repeat-x;
+  height: 100px;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .items {
@@ -22,11 +39,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   -webkit-user-select: none;
   user-select: none;
-
-  animation: rotation 15s infinite ease-in-out;
 }
 
 .item__top--transparent {
@@ -35,12 +50,12 @@ body {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  
+
   -webkit-user-select: none;
   user-select: none;
 }
 
-.item__top {  
+.item__top {
 
   position: absolute;
   z-index: 1;
@@ -68,14 +83,31 @@ img {
   width: 100%;
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
+.points {
+  color: white;
+}
+
+/* ANIMATIONS */
+.item:nth-child(odd) {
+  transform: rotate(-25deg);
+  animation: rotate-odd 10s infinite ease-in-out alternate,
+    orbit-odd 4s linear infinite;
+}
+
+.item:nth-child(even) {
+  transform: rotate(25deg);
+  animation: rotate-even 10s infinite ease-in-out alternate,
+    orbit-even 4s linear infinite;
+}
+
+@keyframes rotate-odd {
+  to {
     transform: rotate(25deg);
   }
-  100% {
-    transform: rotate(0deg);
+}
+
+@keyframes rotate-even {
+  to {
+    transform: rotate(-25deg);
   }
 }

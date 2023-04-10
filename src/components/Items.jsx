@@ -9,10 +9,9 @@ export const Items = ({points, setPoints}) => {
     const validateSelection = () => {
         const validateType = selectedItems.every(item => item.getAttribute('data-type') === selectedItems[0].getAttribute('data-type'));
         const validateColor = selectedItems.every(item => item.getAttribute('data-color') === selectedItems[0].getAttribute('data-color'));
-
-        if (validateType && validateColor) {
-        console.log(selectedItems)
-            const matchedItems = selectedItems.length;
+        const matchedItems = selectedItems.length;
+        
+        if (validateType && validateColor && matchedItems > 1) {
             setPoints(points + matchedItems)
         }
 
