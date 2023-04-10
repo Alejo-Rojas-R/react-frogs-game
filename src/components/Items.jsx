@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Item } from './Item'
 
-export const Items = ({points, setPoints}) => {
+export const Items = ({ points, setPoints }) => {
     const [selectedItems, setSelectedItems] = useState([]);
 
     const itemsNumber = Array.apply(0, Array(36));
@@ -10,8 +10,8 @@ export const Items = ({points, setPoints}) => {
         const validateType = selectedItems.every(item => item.getAttribute('data-type') === selectedItems[0].getAttribute('data-type'));
         const validateColor = selectedItems.every(item => item.getAttribute('data-color') === selectedItems[0].getAttribute('data-color'));
         const matchedItems = selectedItems.length;
-        
-        if (validateType && validateColor && matchedItems > 1) {
+
+        if (validateType && validateColor && matchedItems > 2) {
             setPoints(points + matchedItems)
         }
 

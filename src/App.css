@@ -6,8 +6,6 @@ body {
   font-family: Tahoma, sans-serif;
 }
 
-.content {}
-
 .header {
   background-image: url('src/assets/brown-wooden-plank-clipart-md.png');
   background-size: contain;
@@ -70,13 +68,11 @@ body {
   -webkit-user-drag: none;
   -webkit-user-select: none;
   user-select: none;
-
-  transition: width 0.3s linear;
 }
 
 .item--selected .item__bottom {
-  width: 0%;
   height: auto;
+  opacity: 0.5;
 }
 
 img {
@@ -85,6 +81,12 @@ img {
 
 .points {
   color: white;
+}
+
+.points--flicker h2 {
+  color: yellow;
+  font-size: 30px;
+  transition: font-size 0.1s ease-in-out;
 }
 
 /* ANIMATIONS */
