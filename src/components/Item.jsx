@@ -1,8 +1,8 @@
 import React, { useEffect, useId, useState } from 'react'
 import { Images } from '../helpers/AssetsController'
 
-/* Lilypad single item*/
-export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => {
+// Lilypad single item
+export const Item = ({ selectedItems, setSelectedItems, validateSelection, keyProp }) => {
   const [selectedClass, setSelectedClass] = useState('');
   const [rotation, setRotation] = useState({});
   const [elementType, setElementType] = useState({});
@@ -11,29 +11,16 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
 
   useEffect(() => {
     setItemType();
-    /*
-    const validImages = ['frog', 'dragonfly'];
-
-    if (validImages.includes(elementType.type)) {
-      setRotation(getRandomRotation());
-    }
-    */
   }, [])
 
   useEffect(() => {
     giveSelectedClass();
   }, [validateSelection])
 
-  /* Validate selection CSS class to set the setSelectedClass hook */
+  // Validate selection CSS class to set the setSelectedClass hook
   const giveSelectedClass = () => {
     setSelectedClass(selectedItems.some(item => item.id === id) ? ' item--selected' : '');
   }
-
-
-  const getRandomRotation = () => {
-    const angle = Math.random() * 360;
-    return { transform: `rotate(${angle}deg)` };
-  };
 
   const selectingItems = (e) => {
     const selectedItem = e.target.parentNode;
@@ -49,7 +36,7 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
   };
 
   const setItemType = () => {
-    const validImages = ['frog', 'dragonfly', 'flower'];
+    const validImages = ['frog', /*'dragonfly',*/ 'flower'];
 
     const images = Images.filter(img => validImages.includes(img.type))
 
@@ -63,10 +50,10 @@ export const Item = ({ selectedItems, setSelectedItems, validateSelection }) => 
   }
 
   return (
-    <div id={id} className={'item' + selectedClass} data-type={elementType.type} data-color={elementType.color}>
-        <img className='item__top' src={elementType.image} style={rotation} />
-        <img className='item__top--transparent' src={getSingleImage('empty')} onDragEnter={selectingItems} onDragEnd={validateSelection} />
-        <img className='item__bottom' src={getSingleImage('lilypad')} style={rotation} />
+    <div id={id} className={'item' + selectedClass} data-type={elementType.type} data-color={elementType.color} data-key={keyProp}>
+      <img className='item__top' src={elementType.image} style={rotation} />
+      <img className='item__top--transparent' src={getSingleImage('empty')} onDragEnter={selectingItems} onDragEnd={validateSelection} />
+      <img className='item__bottom' src={getSingleImage('lilypad')} style={rotation} />
     </div>
   )
 }

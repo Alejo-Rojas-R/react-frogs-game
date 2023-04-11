@@ -24,11 +24,12 @@ export const Images = [
         type: 'flower',
         image: 'src/assets/lotus-clipart-2-md.png',
     },
+    /*
     {
         color: 'rose',
         type: 'flower',
         image: 'src/assets/lotus-clipart-md.png',
-    },
+    },*/
     {
         color: 'white',
         type: 'flower',

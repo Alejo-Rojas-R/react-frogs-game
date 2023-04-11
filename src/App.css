@@ -19,8 +19,6 @@ body {
 
 .items {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 
@@ -70,6 +68,10 @@ body {
   user-select: none;
 }
 
+.item--selected {
+  pointer-events: none;
+}
+
 .item--selected .item__bottom {
   height: auto;
   opacity: 0.5;
@@ -92,13 +94,13 @@ img {
 /* ANIMATIONS */
 .item:nth-child(odd) {
   transform: rotate(-25deg);
-  animation: rotate-odd 10s infinite ease-in-out alternate,
+  animation: rotate-odd 10s infinite linear alternate,
     orbit-odd 4s linear infinite;
 }
 
 .item:nth-child(even) {
   transform: rotate(25deg);
-  animation: rotate-even 10s infinite ease-in-out alternate,
+  animation: rotate-even 10s infinite linear alternate,
     orbit-even 4s linear infinite;
 }
 
