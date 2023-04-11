@@ -1,4 +1,4 @@
-# Items Match Game
+# Match the Items Game
 The goal of this game is that you need to match the items by pressing and dragging the mouse over those that you think would match.
 
 - The match has to be done with 3 items minimum.
