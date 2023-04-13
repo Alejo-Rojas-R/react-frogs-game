@@ -17,9 +17,3 @@ The goal of this game is that you need to match the items by pressing and draggi
 ## Lessons Learned
 
 I was able to learn more about the behaviour of some REACT hooks like useState, useId, useEffect and useRef.
-
-
-## Screenshots
-
-![App Screenshot](https://user-images.githubusercontent.com/125615397/231234691-14caee57-60e7-4093-8a0e-41211d2e0b74.png)
-
