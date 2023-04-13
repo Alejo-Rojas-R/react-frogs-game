@@ -11,12 +11,14 @@ The goal of this game is that you need to match the items by pressing and draggi
 
 ## Demo
 
-![App Demo](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzYwMzc3OTc4ZWFlYmJmMDk2ZmQ5NDllMjg3MTFlMGIxYjBmZDEyMCZjdD1n/8PWw2g02fpn1lECZbA/giphy.gif)
+![giphy](https://user-images.githubusercontent.com/125615397/231854072-f5c37e3b-e071-4833-8a89-cf1f22bbf09a.gif)
 
 
 ## Lessons Learned
 
 I was able to learn more about the behaviour of some REACT hooks like useState, useId, useEffect and useRef.
+
+
 ## Screenshots
 
 ![App Screenshot](https://user-images.githubusercontent.com/125615397/231234691-14caee57-60e7-4093-8a0e-41211d2e0b74.png)
