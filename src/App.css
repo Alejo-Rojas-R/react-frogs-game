@@ -1,16 +1,17 @@
 body {
   height: 100%;
   background-color: #74ccf4;
-  background-image: url('src/assets/moving-water.gif');
+  background-image: url('../assets/moving-water.gif');
   margin: 0;
   font-family: Tahoma, sans-serif;
 }
 
 .header {
-  background-image: url('src/assets/brown-wooden-plank-clipart-md.png');
+  background-image: url('../assets/brown-wooden-plank-clipart-md.png');
   background-size: contain;
-  background-repeat: repeat-x;
-  height: 100px;
+  background-repeat: no-repeat;
+  height: 90px;
+  margin-bottom: 10px;
   background-position: center;
   display: flex;
   align-items: center;
